@@ -28,6 +28,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.1.0",
     "@cloudflare/next-on-pages": "^1.13.0",
-    "@opennextjs/cloudflare": "^1.16.0"
+    "@opennextjs/cloudflare": "^1.16.0",
+    "wrangler": "^3.101.0"
   }
 }
