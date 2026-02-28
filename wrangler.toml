@@ -1,8 +1,0 @@
-name = "toolstekno"
-main = ".open-next/worker.js"
-compatibility_date = "2024-12-16"
-compatibility_flags = ["nextjs_compute", "nodejs_compat"]
-
-[assets]
-directory = ".open-next/assets"
-binding = "ASSETS"
