@@ -13,15 +13,25 @@ import {
   Command
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import SearchModal from "./SearchModal";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setIsSearchOpen(true);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("keydown", handleKeyDown);
 
     // Initial theme check
     const savedTheme = localStorage.getItem("theme") as "light" | "dark";
@@ -33,7 +43,10 @@ export default function Header() {
       document.documentElement.classList.add("dark");
     }
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
 
   const toggleTheme = () => {
@@ -69,8 +82,14 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-3 pl-6 border-l">
-            <button className="p-2 hover:bg-muted rounded-lg transition-colors text-muted-foreground hover:text-foreground">
+            <button 
+              onClick={() => setIsSearchOpen(true)}
+              className="p-2 hover:bg-muted rounded-lg transition-colors text-muted-foreground hover:text-foreground flex items-center gap-2 group"
+            >
               <Search className="w-4 h-4" />
+              <span className="hidden lg:inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-muted-foreground/10 text-[9px] font-black uppercase">
+                <Command className="w-2 h-2" /> K
+              </span>
             </button>
             <button 
               onClick={toggleTheme}
@@ -121,6 +140,7 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </header>
   );
 }
