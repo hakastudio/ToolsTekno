@@ -29,7 +29,7 @@ export default function PostSeoOnPage() {
             datePublished: "2026-02-20",
             dateModified: "2026-02-20",
             author: { "@type": "Organization", name: "TOOLS TEKNO" },
-            publisher: { "@type": "Organization", name: "TOOLS TEKNO", logo: { "@type": "ImageObject", url: "https://www.tools.teknocuan.web.id/logo.png" } },
+            publisher: { "@type": "Organization", name: "TOOLS TEKNO", logo: { "@type": "ImageObject", url: "https://tools.teknocuan.web.id/logo.png" } },
           }),
         }}
       />

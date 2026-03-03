@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tools.teknocuan.com/sitemap.xml
+Sitemap: https://tools.teknocuan.web.id/sitemap.xml

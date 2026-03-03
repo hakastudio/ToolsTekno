@@ -46,11 +46,11 @@ export default function ToolPageLayout({
       "price": "0",
       "priceCurrency": "USD"
     },
-    "url": `https://www.tools.teknocuan.web.id/tools/${slug ?? ""}`,
+    "url": `https://tools.teknocuan.web.id/tools/${slug ?? ""}`,
     "creator": {
       "@type": "Organization",
       "name": "TOOLS TEKNO",
-      "url": "https://www.tools.teknocuan.web.id"
+      "url": "https://tools.teknocuan.web.id"
     }
   };
 

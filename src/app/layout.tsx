@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
   description: "Free Professional SEO & Developer Tools — Keyword Density, Regex Tester, JSON Formatter, Hash Generator, and more. 100% client-side, no data stored.",
   keywords: ["seo tools", "developer tools", "free online tools", "keyword density", "regex tester", "json formatter"],
-  metadataBase: new URL("https://www.tools.teknocuan.web.id"),
+  metadataBase: new URL("https://tools.teknocuan.web.id"),
   openGraph: {
     type: "website",
     locale: "id_ID",
