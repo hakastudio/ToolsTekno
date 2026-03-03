@@ -19,6 +19,10 @@ export const metadata: Metadata = {
     locale: "id_ID",
     siteName: "TOOLS TEKNO",
   },
+  icons: {
+    icon: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
